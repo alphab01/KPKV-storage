@@ -18,4 +18,7 @@ func (kv kvmem) Set(k any, v any) {
 
 func main() {
   fmt.Println("I believe this project will be wonderful")
+  var s kvmem
+  s.mem = make(map[string]int)
+  s.Set("kirill", 10)
 }
