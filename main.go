@@ -2,12 +2,12 @@ package main
 
 import (
   "fmt"
+  "sync"
 )
 
-type kvmem interface {
-  Set(k any, v any)
-  Get(k any)
-  Delete(k any)
+type kvmem struct {
+  mem map[any]any
+  mu sync.Mutex
 }
 
 func main() {
